@@ -5,16 +5,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>360 Video</title>
     <meta name="description" content="360 Video — A-Frame">
-    <script src="aframe.min.js"></script>
 
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   <script>
-	    
-	   $(document).ready(function () { document.getElementById('video').play(); }) 
-  
-</script>	  
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+    <style>
+        #play-button{
+          position: fixed;
+          top: calc(50% - 1em);
+          left: calc(50% - 100px);
+          width: 200px;
+          height: 2em;
+          z-index: 10;
+        }
+    </style>
   </head>
   <body>
+	  <button id="play-button">Begin Your Experience</button>
     <a-scene>
 
 
@@ -34,13 +40,31 @@
   <a-image height="0.5" width="0.5" position="-4 -0.32 1" src="#my-image2"></a-image>
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-assets>
-        <video id="video" src="dubai.mp4"
-               autoplay="false" loop crossorigin webkit-playsinline></video>
+        <video id="video" src="dubai.mp4" preload="auto" autoplay loop crossorigin webkit-playsinline></video>
       </a-assets>
 
-      <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
-    </a-scene>
+      <a-videosphere id="theVideo" autoplay="false" src="#video" rotation="0 180 0"></a-videosphere>
+
+
+	  </a-scene>
     
  
   </body>
+	
+<script>
+
+// Play button, required by browsers to grab user interaction before autoplaying videos.
+document.querySelector('#play-button').addEventListener("click", function(e){
+startStuff();  // launch the first voice over
+this.style.display = 'none';
+}, false);
+
+function startStuff(){
+    var theVideo = document.querySelector('#n1');
+    theVideo.play();
+
+    var theAudio = document.querySelector('#v1');
+    theAudio.play();
+}
+</script>	
 </html>
