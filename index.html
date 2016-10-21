@@ -8,7 +8,7 @@
     <script src="aframe.min.js"></script>
     <script src="aframe-text-component.min.js"></script>
   </head>
-  <body>
+  <body onload="playVideo();">
     <a-scene>
 
 
@@ -29,7 +29,7 @@
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-assets>
         <video id="video" src="dubai.mp4"
-               autoplay loop crossorigin webkit-playsinline></video>
+               autoplay="false" loop crossorigin webkit-playsinline></video>
       </a-assets>
 
       <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
@@ -41,8 +41,6 @@
 		document.getElementById('video').play();
     })
   }
-
-  document.querySelector('.a-enter-vr-button').addEventListener('click', playVideo)
 </script>
   </body>
 </html>
