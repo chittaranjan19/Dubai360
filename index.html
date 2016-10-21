@@ -6,9 +6,15 @@
     <title>360 Video</title>
     <meta name="description" content="360 Video — A-Frame">
     <script src="aframe.min.js"></script>
-    <script src="aframe-text-component.min.js"></script>
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script>
+	    
+	   $(document).ready(function () { document.getElementById('video').play(); }) 
+  
+</script>	  
   </head>
-  <body onload="playVideo();">
+  <body>
     <a-scene>
 
 
@@ -35,12 +41,6 @@
       <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
     </a-scene>
     
-    <script>
-  function playVideo () {
-
-		document.getElementById('video').play();
-    })
-  }
-</script>
+ 
   </body>
 </html>
