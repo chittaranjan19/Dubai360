@@ -7,12 +7,15 @@
     <meta name="description" content="360 Video — A-Frame">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="style.css">
     <script src="aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+
+    <a-scene id="scene">
 
 
+  <!-- <a-image id="playButton" position="0 0 0" src="#playBTN"></a-image> -->
   <a-assets>
     <img style="position:fixed" id="my-image" src="tr3.gif">
   </a-assets>
@@ -29,14 +32,17 @@
   <a-image height="0.5" width="0.5" position="-4 -0.32 1" src="#my-image2"></a-image>
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-assets>
-        <video id="video" src="dubai.mp4" preload="auto" autoplay loop crossorigin webkit-playsinline></video>
+        <video id="video"  preload="auto" src="dubai.mp4" autoplay=false loop crossorigin></video>
       </a-assets>
 
-      <a-videosphere id="theVideo" autoplay src="#video" rotation="0 180 0"></a-videosphere>
-
+       <a-videosphere id="theVideo" src="#video" rotation="0 180 0"></a-videosphere>
 
 	  </a-scene>
-    
- 
+    <script
+    src="jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
   </body>
 </html>
