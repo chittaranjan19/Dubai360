@@ -17,7 +17,7 @@
     <div id="loaderWrapper">
       <img id="loader" src="loader.gif">
     </div>
-    <a-scene id="scene">
+    <a-scene id="scene" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js" debug=true>
 
 
   <!-- <a-image id="playButton" position="0 0 0" src="#playBTN"></a-image> -->
@@ -25,7 +25,7 @@
     <img style="position:fixed" id="my-image" src="tr3.gif">
   </a-assets>
   <!-- Using the asset management system. -->
-  <a-image position="-4 3.5 1" src="#my-image"></a-image>
+  <!-- <a-image position="-4 3.5 1" src="#my-image" look-at="[camera]"></a-image> -->
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
 
 
@@ -33,15 +33,21 @@
   <a-assets>
     <img style="position:fixed" id="my-image2" src="logo.png">
   </a-assets>
+
   <!-- Using the asset management system. -->
-  <a-image height="0.5" width="0.5" position="-4 -0.32 1" src="#my-image2"></a-image>
+  <!-- <a-image height="0.5" width="0.5" position="-4 -0.32 1" src="#my-image2" look-at="[camera]"></a-image> -->
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
       <a-assets>
         <video id="video"  preload="auto" src="dubai.mp4" autoplay=false loop crossorigin></video>
       </a-assets>
 
-       <a-videosphere id="theVideo" src="#video" rotation="0 180 0"></a-videosphere>
+       <a-videosphere id="theVideo" src="#video" rotation="0 180 0">
 
+       </a-videosphere>
+       <a-camera position="0 0 0">
+         <a-image position="-6 3.5 -5" src="#my-image"></a-image>
+         <a-image height="0.75" width="0.75" position="-6 -3.5 -5" src="#my-image2"></a-image>
+       </a-camera>
 	  </a-scene>
     <script
     src="jquery-3.1.1.min.js"
